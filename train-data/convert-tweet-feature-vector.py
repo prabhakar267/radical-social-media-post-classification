@@ -19,7 +19,6 @@ length_of_time_features = 24 + 7
 
 total_length = length_of_hashtags + length_of_words + length_of_time_features
 
-
 words_added = 0
 total_count = 0
 ctr = 0

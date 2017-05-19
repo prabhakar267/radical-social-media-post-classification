@@ -96,5 +96,5 @@ dump/
 nltk_data/
 data-from-accounts/
 data-from-accounts1/
-
-
+dataset/
+train-data/feature-vectors/
