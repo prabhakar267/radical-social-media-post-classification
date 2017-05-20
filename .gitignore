@@ -98,3 +98,7 @@ data-from-accounts/
 data-from-accounts1/
 dataset/
 train-data/feature-vectors/
+train-data/results/
+train-data/final_results_X
+train-data/final_results_Y
+train-data/test-data

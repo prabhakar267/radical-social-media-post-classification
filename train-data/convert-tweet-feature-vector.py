@@ -25,10 +25,11 @@ ctr = 0
 dataset_path = "dataset"
 feature_vector_path = "feature-vectors"
 
-selected_dataset = "IslamicState"
+selected_dataset = "GameOfThrones"
+selected_output = "test-data"
 
 final_dataset_path = dataset_path + "/" + selected_dataset
-final_feature_vector_path = feature_vector_path + "/" + selected_dataset
+final_feature_vector_path = feature_vector_path + "/" + selected_output
 
 for dp, dn, filenames in os.walk(final_dataset_path):
 	total_count += len(filenames)

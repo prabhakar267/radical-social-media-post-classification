@@ -3,13 +3,13 @@ import urlparse
 
 from TwitterAPI import TwitterAPI
 
-HASHTAG = "Daesh"
+HASHTAG = "ISIL"
 SEARCH_TERM = '#' + HASHTAG
 
-CONSUMER_KEY = 'pxWu3KD8bthx0ERuzA8azh61e'
-CONSUMER_SECRET = 'viOitYFe4s29Lj6ibM3ABsnwT6dAdYWPriLUCujsljfXNUEKx1'
-ACCESS_TOKEN_KEY = '1954715881-X89rhEPJLBdmDFCfHK9Gnb1uwDTVl3YZszK8abD'
-ACCESS_TOKEN_SECRET = 'KMCmjw37Th6V0W2xs87NoohSEbspzezShyr2pkdwSewRz'
+CONSUMER_KEY = 'dACHUkdxoeoGhj33VbhJbhu5I'
+CONSUMER_SECRET = 'Oyhi6fkORU7NEM3KGFa0vEAVX2FVKijYFsAogxsO96ZTQObx9G'
+ACCESS_TOKEN_KEY = '865560603292614658-zK5KgbeItsuwrmCccmA3cjsb5s4uwDE'
+ACCESS_TOKEN_SECRET = 'fbvd9NDzsMdAiTeUmqLCa9QpL4L3suiyuRW0O7qXNvk7F'
 
 dir_name = "dataset"
 tweet_dir = dir_name + "/" + HASHTAG
