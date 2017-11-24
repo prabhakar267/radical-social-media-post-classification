@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 
 from TwitterAPI import TwitterAPI
 from TwitterConstants import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
@@ -39,10 +40,22 @@ def write_tweet(output_filepath, tweet_json):
         sys.exit(1)
 
 
-def increase_score(score_dict, key, value):
-    if key in score_dict:
-        score_dict[key] += value
-    else:
-        score_dict[key] = value
+def get_list_of_hashtags(tweet_filepath):
+    hashtags_found = []
+    try:
+        with open(tweet_filepath) as f:    
+            tweet_json = json.load(f)
+            hashtags_found = tweet_json['entities']['hashtags']
+    except IOError as e:
+        print "Invalid File Path at {}".format(tweet_filepath)
 
-    return score_dict
+    return hashtags_found
+
+
+def increase_frequency(dictonary, key, increase):
+    if key in dictonary:
+        dictonary[key] += increase
+    else:
+        dictonary[key] = increase
+
+    return dictonary
