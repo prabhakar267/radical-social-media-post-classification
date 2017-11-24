@@ -89,6 +89,10 @@ ENV/
 .ropeproject
 
 
+# Twitter API credentials
+TwitterConstants.py
+
+
 # extracted data directories
 tweets-accounts/
 Real/

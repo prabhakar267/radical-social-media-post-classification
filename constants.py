@@ -1,0 +1,6 @@
+TWEET_COUNT = 100
+
+DATA_DIR = "data"
+
+TWEETS_DUMP_DIR = "tweets"
+HASHTAG_LIST_FILE = "hashtags"
