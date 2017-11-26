@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+import re
 
 from TwitterAPI import TwitterAPI
 from TwitterConstants import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
@@ -52,6 +53,26 @@ def get_list_of_hashtags(tweet_filepath):
     return hashtags_found
 
 
+def get_tweet_text(tweet_filepath):
+    tweet_text = ''
+    try:
+        with open(tweet_filepath) as f:    
+            tweet_json = json.load(f)
+            tweet_text = tweet_json['text']
+    except IOError as e:
+        print "Invalid File Path at {}".format(tweet_filepath)
+
+    return tweet_text
+
+
+def store_json_response(filepath, dictonary, beautify_mode=True):
+    with open(filepath, 'w+') as f:
+        if beautify_mode:
+            json.dump(dictonary, f, sort_keys=True, indent=4)
+        else:
+            json.dump(dictonary, f)
+
+
 def increase_frequency(dictonary, key, increase):
     if key in dictonary:
         dictonary[key] += increase
@@ -59,3 +80,8 @@ def increase_frequency(dictonary, key, increase):
         dictonary[key] = increase
 
     return dictonary
+
+
+def remove_hashtags(tweet):
+    clean_tweet = ' '.join(re.sub("(@[A-Za-z0-9]+)|(#[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)"," ",tweet).split())
+    return clean_tweet
