@@ -4,7 +4,15 @@ import json
 import re
 
 from TwitterAPI import TwitterAPI
-from TwitterConstants import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
+try:
+    from TwitterConstants import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET
+except ImportError:
+    print """
+    ERROR: TwitterConstants file missing. 
+    Check README for instructions.
+    """
+    exit()
+
 
 from constants import DATA_DIR, HASHTAG_LIST_FILE
 

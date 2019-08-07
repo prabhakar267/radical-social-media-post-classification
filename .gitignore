@@ -92,6 +92,8 @@ ENV/
 # Twitter API credentials
 TwitterConstants.py
 
+# Results directory
+results/
 
 # extracted data directories
 tweets-accounts/
